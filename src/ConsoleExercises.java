@@ -1,14 +1,18 @@
 import java.util.Scanner;
-//import java.util.Float;
 
 public class ConsoleExercises {
     public static void main(String[] args){
         Scanner scanner = new Scanner(System.in);
 
 
-        double pi = 3.14159;
+//        double pi = 3.14159;
 //        System.out.println("The value of pi is approximately " + pi);
 //        System.out.format("The value of pi is approximately %.2f", pi);
+
+//        String piMessage = String.format("The value of pi is approximately %.2f", pi);
+        //The above stores a formatted string to use later!
+
+
 
 //        System.out.printf("hello $ %.2f", (1000 / 100.00));
 
@@ -68,20 +72,53 @@ public class ConsoleExercises {
 //        code above to your application, you should now have no trouble handling multiple pieces of user input.
 
 
-        System.out.println("Enter the length and width of the classroom: ");
+//        System.out.println("Enter the length and width of the classroom: ");
         scanner.useDelimiter("\n");
+//
+//
+//        float length = Float.parseFloat(scanner.next());
+//        float width = Float.parseFloat(scanner.next());
+//        float height = Float.parseFloat(scanner.next());
+//
+//
+//        float area = length * width;
+//        float perimeter = (2 * length) + (2 * width);
+//        float volume = length * width * height;
+//
+//        System.out.printf("Area: %.2f%nPerimeter: %.2f%nVolume: %.2f%n", area, perimeter, volume);
+
+//================================= CONSOLE IO BONUSES
+//        BONUS 1
+//        Prompt the user to enter a favorite quote
+//        Output the quote
+//        Ask them to enter how many words are in the quote
+//        Output the number they entered
+//        Output if the number they entered indeed matched the number of words
+
+        System.out.println("Enter your favorite quote: ");
+        String userQuote = scanner.nextLine();
+
+        System.out.println("How many words do you think there are in your quote? ");
+        int userNumOfWords = scanner.nextInt();
+
+        int numOfWords = userQuote.split("\\s").length;
+        System.out.printf("%b there are %d words in the quote", (userNumOfWords == numOfWords), numOfWords);
+
+//        BONUS 2
+//        Prompt the user to enter a list of top three favorite foods separated by only spaces
+//        Use the printf() to output the three top foods with the format:
+//        1) FirstFood
+//        2) SecondFood
+//        3) ThirdFood
 
 
-        float length = Float.parseFloat(scanner.next());
-        float width = Float.parseFloat(scanner.next());
-        float height = Float.parseFloat(scanner.next());
 
+//        BONUS 3
+//        Prompt the user to enter a grocery list of three items
+//        Each item should only be separated by a comma (no spaces)
+//        You will need to use the .useDelimiter() method on your scanner object
+//        Output the result as a comma-separated list using printf()
 
-        float area = length * width;
-        float perimeter = (2 * length) + (2 * width);
-        float volume = length * width * height;
-
-        System.out.printf("Area: %.2f%nPerimeter: %.2f%nVolume: %.2f%n", area, perimeter, volume);
 
 
     }
