@@ -29,11 +29,11 @@ public class Bob {
                 System.out.println("Whatever.");
             }
 
-            System.out.println("\nWould you like to talk to Bob?");
+            System.out.println("\nWould you like to talk to Bob? yes or no");
             talkToBob = scanner.next();
             scanner.nextLine();
 
-        }while(talkToBob.equals("yes"));
+        }while(!talkToBob.equals("no"));
 
 //        while(talkToBob.equals("yes")){
 //            System.out.println("Say something to Bob: ");
