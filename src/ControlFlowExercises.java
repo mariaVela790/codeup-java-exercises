@@ -49,6 +49,7 @@ public class ControlFlowExercises {
 //            System.out.println(i);
 //        }
 
+        ////////////////////////////////////////////////////////////////////////
 //        for(int i = 0; i <= 100 ; i++){
 //            if(i % 15 == 0){
 //                System.out.println("FizzBuzz");
@@ -61,21 +62,24 @@ public class ControlFlowExercises {
 //            }
 //        }
 
-//        System.out.print("What number would you like to go up to? ");
-//        int num = scanner.nextInt();
-//
-//        System.out.println("Here is your table!\n");
-//        System.out.println("number | square | cubed");
-//        System.out.println("------ | ------ | ------");
-//
-//        for(int i = 1; i <= num; i++){
-//
-//            int num1 = i;
-//            int num2 = (int)Math.pow(i, 2);
-//            int num3 = (int)Math.pow(i, 3);
-//
-//            System.out.printf("%-6d | %-6d | %-6d%n", num1, num2, num3);
-//        }
+        ///////////////////////////////////////////////////////////////////////
+        System.out.print("What number would you like to go up to? ");
+        int num = scanner.nextInt();
+
+        System.out.println("Here is your table!\n");
+        System.out.println("number | square | cubed");
+        System.out.println("------ | ------ | ------");
+
+        for(int i = 1; i <= num; i++){
+
+            int num1 = i;
+            int num2 = (int)Math.pow(i, 2);
+            int num3 = (int)Math.pow(i, 3);
+
+            System.out.printf("%-6d | %-6d | %-6d%n", num1, num2, num3);
+        }
+
+        ///////////////////////////////////////////////////////////////////////
 
 //        System.out.println("Enter grade: ");
 //        float grade = (float)scanner.nextDouble();
