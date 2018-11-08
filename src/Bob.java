@@ -13,27 +13,32 @@ public class Bob {
         do{
             System.out.println("Say something to Bob: ");
             String input = scanner.nextLine();
+            String bobResponse;
 
             if(input.endsWith("?")){
-                System.out.println("Sure.");
+                bobResponse = "Sure.";
 
             } else if(input.endsWith("!")){
+                bobResponse = "Whoa, chill out!";
 
-                System.out.println("Whoa, chill out!");
 
-            } else if(input.isEmpty()){
+            } else if(input.equals("")){//can also use isEmpty()
 
-                System.out.println("Fine. Be that way!");
+                bobResponse = "Fine. Be that way!";
             } else {
 
-                System.out.println("Whatever.");
+                bobResponse = "Whatever.";
             }
+            //bobResponse what bob says
+            System.out.println(bobResponse);
 
-            System.out.println("\nWould you like to talk to Bob?");
+
+            //ask if user wants to talk to bob more
+            System.out.println("\nWould you like to talk to Bob? yes or no");
             talkToBob = scanner.next();
             scanner.nextLine();
 
-        }while(talkToBob.equals("yes"));
+        }while(!talkToBob.equals("no"));
 
 //        while(talkToBob.equals("yes")){
 //            System.out.println("Say something to Bob: ");
