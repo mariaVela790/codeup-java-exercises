@@ -21,7 +21,7 @@ public class StringBonuses {
 //        Example:
 //
 //        input - 12/01/1999
-//        output - December 12, 1999
+//        output - December 1, 1999
 //
         System.out.println("Enter a date as MM/DD/YYYY");
         String date[] = scanner.next().split("/");
@@ -75,7 +75,8 @@ public class StringBonuses {
                 dateStr += "none";
         }
 
-//        dateStr += " day,"
+        dateStr += String.format(" %d, %d", day, year);
+        System.out.println(dateStr);
 
 
 
