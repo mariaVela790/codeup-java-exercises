@@ -33,45 +33,51 @@ public class StringBonuses {
 
         String dateStr = "";
 
-//        switch (month){
-//            case 1:
-//                dateStr += "January";
-//                break;
-//
-//            case 2:
-//                dateStr += "February";
-//                break;
-//            case 3:
-//                dateStr += "March";
-//                break;
-//            case 4:
-//                dateStr += "April";
-//                break;
-//            case 5:
-//                dateStr += "May";
-//                break;
-//            case 6:
-//                dateStr += "June";
-//                break;
-//            case 2:
-//                dateStr += "February";
-//                break;
-//            case 2:
-//                dateStr += "February";
-//                break;
-//            case 2:
-//                dateStr += "February";
-//                break;
-//            case 2:
-//                dateStr += "February";
-//                break;
-//            case 2:
-//                dateStr += "February";
-//                break;
-//            case 2:
-//                dateStr += "February";
-//                break;
-//        }
+        switch (month){
+            case 1:
+                dateStr += "January";
+                break;
+
+            case 2:
+                dateStr += "February";
+                break;
+            case 3:
+                dateStr += "March";
+                break;
+            case 4:
+                dateStr += "April";
+                break;
+            case 5:
+                dateStr += "May";
+                break;
+            case 6:
+                dateStr += "June";
+                break;
+            case 7:
+                dateStr += "July";
+                break;
+            case 8:
+                dateStr += "August";
+                break;
+            case 9:
+                dateStr += "September";
+                break;
+            case 10:
+                dateStr += "October";
+                break;
+            case 11:
+                dateStr += "November";
+                break;
+            case 12:
+                dateStr += "December";
+                break;
+            default:
+                dateStr += "none";
+        }
+
+//        dateStr += " day,"
+
+
 
 //
 //                ----BONUS 2
