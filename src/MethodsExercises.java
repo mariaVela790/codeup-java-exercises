@@ -16,6 +16,7 @@ public class MethodsExercises {
 //        System.out.println(factorialStr);
 //        System.out.println(diceRoll());
 //        System.out.println(multiplyNums(3, 8));
+        System.out.println("Hello world");
 
     }
 
@@ -81,7 +82,7 @@ public class MethodsExercises {
 //            outputStr += createFactorialStr(i);
 //        }
 //        return outputStr;
-    }
+//    }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
 //    public static int getInteger(int min, int max){
