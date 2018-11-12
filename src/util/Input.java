@@ -8,4 +8,6 @@ public class Input {
     public Input(){
         scanner = new Scanner(System.in);
     }
+
+
 }
