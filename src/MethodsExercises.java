@@ -3,10 +3,13 @@ import java.util.Scanner;
 public class MethodsExercises {
     public static void main(String[] args) {
 
-//        System.out.println(addNums(1,2));
-//        System.out.println(subtractNums(1,2));
-//        System.out.println(multiplyNums(1,2));
-//        System.out.println(divideNums(1,0));
+        System.out.println(addNums(1,2));
+        System.out.println(subtractNums(1,2));
+        System.out.println(subtractNums(2.8,1.3));
+        System.out.println(multiplyNums(1,2));
+        System.out.println(addNums(2, 2.0));
+        System.out.println(divideNums(1,0));
+        System.out.println(mod(100, 2));
 
 //        System.out.println(nFactorial(4));
 //        System.out.println("Enter a number between 1 and 10: ");
@@ -16,6 +19,7 @@ public class MethodsExercises {
 //        System.out.println(factorialStr);
 //        System.out.println(diceRoll());
 //        System.out.println(multiplyNums(3, 8));
+//        System.out.println("Hello world");
 
     }
 
@@ -44,13 +48,13 @@ public class MethodsExercises {
 //    }
 
 ////////////////////////////////////////////////////////////////////////////////////////////
-//    public static long factorialOf(int n){
-//        if(n == 0){
-//            return 1;
-//        }
-//        long nFactorial = n * factorialOf(n - 1);
-//        return nFactorial;
-//    }
+    public static long factorialOf(int n){
+        if(n == 0){
+            return 1;
+        }
+        long nFactorial = n * factorialOf(n - 1);
+        return nFactorial;
+    }
 
 //    public static String createFactorialStr(int input){
 //        String outputStr = String.format("%d! = ", input);
@@ -81,64 +85,73 @@ public class MethodsExercises {
 //            outputStr += createFactorialStr(i);
 //        }
 //        return outputStr;
+//    }
+
+////////////////////////////////////////////////////////////////////////////////////////////
+    public static int getInteger(int min, int max){
+        Scanner scanner = new Scanner(System.in);
+        int input = scanner.nextInt();
+
+        if(input >= min && input <= max){
+            return input;
+        } else{
+            System.out.println("Enter a valid number:");
+            return getInteger(min, max);
+        }
+    }
+//
+
+////////////////////////////////////////////////////////////////////////////////////////////
+
+    public static double addNums(double num1, double num2){
+        return num1 + num2;
+    }
+    public static double subtractNums(double num1, double num2){
+        return num1 - num2;
+    }
+    public static double multiplyNums(double num1, double num2) {
+        return num1 * num2;
+    }
+    public static double divideNums(double num1, double num2) {
+        return num1 / num2;
+    }
+    public static double mod(double num1, double num2) {
+        return num1 % num2;
+    }
+/////////////Alternative solution to mod function
+    public static int mod(int num1, int num2){
+        return num1 % num2;
     }
 
-////////////////////////////////////////////////////////////////////////////////////////////
-//    public static int getInteger(int min, int max){
-//        Scanner scanner = new Scanner(System.in);
-//        int input = scanner.nextInt();
-//
-//        if(input >= min && input <= max){
-//            return input;
-//        } else{
-//            System.out.println("Enter a valid number:");
-//            return getInteger(min, max);
-//        }
-//    }
-//
-//    public static double addNums(double num1, double num2){
-//        return num1 + num2;
-//    }
-//    public static double subtractNums(double num1, double num2){
-//        return num1 - num2;
-//    }
 
-////////////////////////////////////////////////////////////////////////////////////////////
-//    public static int multiplyNums(int num1, int num2){
-//        //
-//        //        //problem statement: take in two numbers and add first number to itself
-//        //        //Step 1:Take in two numbers
-//        //        //Step 2:
-//        //
-//        //        if(num2 == 0){
-//        //            return num1;
-//        //        }
-//        //        multiplyNums(num1, num2 - 1);
-//        if(num2 == 0){
-//            return 0;
-//        }
-//
-//        return num1 + multiplyNums(num1, num2 - 1);
-//        //////////////////////////////////////////////////////
-//        //        return num1 * num2;
-//        //
-//        //////////////////////////////////////////////////////
-//        //        int num3 = 0;
-//        //        for(int i = 1; i <= num2; i++){
-//        //            num3 += num1;
-//        //        }
-//        //        return num3;
-//    }
+    //method overloading
+    //allows us to use smaller data types when possible
+    public static int addNums(int num1, int num2){
+        return num1 + num2;
+    }
+    public static int subtractNums(int num1, int num2){
+        return num1 - num2;
+    }
 
 
-////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////  Recursion
+    public static int multiplyNums(int num1, int num2){
+       //return num1 * num2;
+        if(num2 == 0){
+            //Base Case
+            return 0;
+        }
+        return num1 + multiplyNums(num1, num2 - 1);//adds num1 num2 many times
+    }
+
+////////////////   Integer Arithmetic
 //    public static int divideNums(int num1, int num2){
 //        return num1 / num2;
-//    }
+//    }//throws an exception because infinity is not defined in Integer arithmetic
 
-////////////////////////////////////////////////////////////////////////////////////////////
-//    public static double divideNums(double num1, double num2){
-//        return num1 / num2;
-//    }
+
+
+
+
 
 //}
