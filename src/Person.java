@@ -1,6 +1,8 @@
 public class Person {
     private String name;
 
+    public Person(){}
+
     public Person(String name){
         this.name = name;
     }
@@ -25,18 +27,18 @@ public class Person {
 //        me.sayHello();
 
 
-//        Person person1 = new Person("John"); //Creates person object with
-//        //name property set to John
-//
-//        Person person2 = new Person("John");//Creates another person object
-//        //with the name property equal to John
-//
-//        System.out.println(person1.getName().equals(person2.getName()));
-//        //outputs true or false depending on whether or not the name property of person1
-//        //is equal to the name property of person2-TRUE
-//
-//        System.out.println(person1 == person2);//checks if person1 and person2 refer
-//        //to the same person object which is FALSE
+        Person person1 = new Person("John"); //Creates person object with
+        //name property set to John
+
+        Person person2 = new Person("John");//Creates another person object
+        //with the name property equal to John
+
+        System.out.println(person1.getName().equals(person2.getName()));
+        //outputs true or false depending on whether or not the name property of person1
+        //is equal to the name property of person2-TRUE
+
+        System.out.println(person1 == person2);//checks if person1 and person2 refer
+        //to the same person object which is FALSE
 
 ////////////////////////////////////////////////////////////////////////////
 //        Person person1 = new Person("John");//creates a person object and assigns
