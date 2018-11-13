@@ -51,16 +51,11 @@ public class Input {
             double userDouble = this.scanner.nextDouble();
             if((userDouble <= max ) && (userDouble >= min )){
                 System.out.println("You are in the range");
-                return 0;
+                return userDouble;
             }else{
                 System.out.println("Not in range");
                 getDouble(min, max);
             }
-        } else{
-            //refactor to catch errors
-            System.out.println("Need to enter a number");
-            double userDouble = this.scanner.nextDouble();
-            getDouble(min, max);
         }
         return 0;
     }
