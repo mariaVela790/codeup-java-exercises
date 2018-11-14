@@ -8,14 +8,21 @@ public class Input {
     public Input(Scanner scanner){
         this.scanner = scanner;
     }
+
     public String getString(){
         return this.scanner.nextLine();
     }
+
     public String getString(String prompt){
         System.out.println(prompt);
         return this.scanner.nextLine();
     }
 
+    public boolean yesNo(){
+        boolean isYes = false;
+        String userInput = getString( "Respond with yes or no [yes/y/n/no]");
+        return (userInput.equalsIgnoreCase("y") || userInput.equalsIgnoreCase("yes"));
+    }
     public boolean yesNo(String prompt){
         boolean isYes = false;
         String userInput = getString(prompt + "Respond with yes or no [yes/y/n/no]");
@@ -45,10 +52,10 @@ public class Input {
         System.out.printf("Please enter an number between %d and %d%n", min, max);
         int userInt = getInt();
         if((userInt <= max ) && (userInt >= min )){
-            System.out.println("You are in the range");
+//            System.out.println("You are in the range");
             return userInt;
         }else{
-            System.out.println("Not in range");
+            System.out.println("Invalid selection");
             return getInt(min, max);
         }
     }
