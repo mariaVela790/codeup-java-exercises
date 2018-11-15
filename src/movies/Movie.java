@@ -11,7 +11,6 @@ public class Movie {
     private static Scanner scanner = new Scanner(System.in);
     private static Input input = new Input(scanner);
 
-
     public Movie(){ }
 
     public Movie(String name, String category){
@@ -36,6 +35,7 @@ public class Movie {
     }
 
     public static void movieMenu(){
+        System.out.println("\n----------------- Menu -------------------");
         System.out.println("0 - exit");
         System.out.println("1 - view all movies");
         System.out.println("2 - view movies in the animated category");
@@ -82,7 +82,7 @@ public class Movie {
 
         switch (userSelection){
             case 0:
-                System.out.println("Exit");
+                System.out.println("Exiting");
                 break;
             case 1:
                 printMovies(movies);
@@ -114,11 +114,11 @@ public class Movie {
     }
 
     public static void startMovieApplication(){
-        movieMenu();
-        int userSelection = input.getInt(0, 6);
-        printMovieResults(userSelection);
-
-
-
+        int userSelection;
+        do{
+            movieMenu();
+            userSelection = input.getInt(0, 6);
+            printMovieResults(userSelection);
+        }while (userSelection != 0);
     }
 }
