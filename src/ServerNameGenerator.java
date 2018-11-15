@@ -1,15 +1,21 @@
 public class ServerNameGenerator {
-    public static String[] adjectives = {"agreeable", "ambitious", "brave", "calm", "eager", "delightful", "faithful", "kind", "nice", "obedient"};
-    public static String[] nouns = {"school", "dog", "cat", "friend", "baby", "hero", "match", "competition", "shoe", "computer"};
+    private static String[] adjectives = {"agreeable", "ambitious", "brave", "calm", "eager", "delightful", "faithful", "kind", "nice", "obedient"};
+    private static String[] nouns = {"school", "dog", "cat", "friend", "baby", "hero", "match", "competition", "shoe", "computer"};
 
-    public static String getRandomElement(String[] strings){
-        int index = (int)(Math.random() * strings.length);
-        return strings[index];
+    private static String getRandomAdjective(){
+        return adjectives[MethodsExercises.getRandom(0, adjectives.length - 1)];
     }
+    private static String getRandomNoun(){
+        return adjectives[MethodsExercises.getRandom(0, nouns.length - 1)];
+    }
+    public static String createServerName(){
+        return getRandomAdjective() + "-" + getRandomNoun();
+    }
+
 
     public static void main(String[] args) {
 
-        System.out.println(getRandomElement(adjectives) + "-" + getRandomElement(nouns));
+        System.out.println(createServerName());
     }
 
 }

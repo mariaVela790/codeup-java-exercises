@@ -149,7 +149,9 @@ public class MethodsExercises {
 //        return num1 / num2;
 //    }//throws an exception because infinity is not defined in Integer arithmetic
 
-
+    public static int getRandom(int min, int max){
+        return (int)((Math.random() * (max - min)) + min);
+    }
 
 
 
