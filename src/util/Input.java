@@ -28,22 +28,12 @@ public class Input {
         String userInput = getString(prompt + "Respond with yes or no [yes/y/n/no]");
         return (userInput.equalsIgnoreCase("y") || userInput.equalsIgnoreCase("yes"));
     }
-//    public boolean yesNo(String prompt){
-//        boolean isYes = false;
-//        String userInput = getString(prompt + "Respond with yes or no [yes/y/n/no]");
-//        if(userInput.equalsIgnoreCase("y") || userInput.equalsIgnoreCase("yes")){
-//            isYes = true;
-//        }
-//        return isYes;
-//    }
-//
-//
+
     public int getInt(){
         if(!scanner.hasNextInt()){
             scanner.nextLine();
             return getInt();
         } else{
-//            System.out.println(prompt);
             return scanner.nextInt();
         }
     }
@@ -52,7 +42,6 @@ public class Input {
         System.out.printf("Please enter an number between %d and %d%n", min, max);
         int userInt = getInt();
         if((userInt <= max ) && (userInt >= min )){
-//            System.out.println("You are in the range");
             return userInt;
         }else{
             System.out.println("Invalid selection");
@@ -74,62 +63,39 @@ public class Input {
                     return userDouble;
                 }
             }
-
-//            if(!this.scanner.hasNextDouble()){//
-//                System.out.println("Enter an integer");
-//            } else{
-//                userDouble = this.scanner.nextDouble();
-//                if(userDouble <= max && userDouble >= min){
-//                    System.out.println("In range");
-//                    return userDouble;
-//                }
-//            }
-
         }while(!this.scanner.hasNextDouble());//keeps running while user keeps inputting incorrect info
-
 
         return 0;
     }
 
-//    public double getDouble(double min, double max){
-//        System.out.printf("Please enter an number between %d and %d%n", min, max);
-//        if(this.scanner.hasNextDouble()){
-//            double userDouble = this.scanner.nextDouble();
-//            if((userDouble <= max ) && (userDouble >= min )){
-//                System.out.println("You are in the range");
-//                return userDouble;
-//            }else{
-//                System.out.println("Not in range");
-//                getDouble(min, max);
-//            }
-//        }
-//        return 0;
-//    }
-
     public int getInt(String prompt){
-        if(!scanner.hasNextInt()){
-            scanner.nextLine();
-            return getInt();
-        } else{
+        int input;
+//        do{
+//            System.out.println(prompt);
+//            scanner.next();
+//            scanner.nextLine();
+//        }while(!scanner.hasNextInt());
+//        input = scanner.nextInt();
+//        return input;
+//        do{
             System.out.println(prompt);
-            return scanner.nextInt();
+//        }while(!scanner.hasNextInt());
+        if(!scanner.hasNextInt()){
+            scanner.next();
+            getInt(prompt);
         }
+        input = scanner.nextInt();
+        return scanner.nextInt();
     }
-//
-//    public double getDouble(double min, double max){
-//
-//    }
-//
+
+    public static void main(String[] args) {
+        Input in = new Input(new Scanner(System.in));
+        int h = in.getInt("Enter two letters and a number");
+    }
+
     public double getDouble(String prompt){
         System.out.println(prompt);
         return scanner.nextDouble();
     }
-
-//    public static void main(String[] args) {
-//        Input input = new Input();
-//        System.out.println(input.getString());
-//        System.out.println(input.yesNo());
-//        input.getInt(1, 10);
-//    }
 
 }
