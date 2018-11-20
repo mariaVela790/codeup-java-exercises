@@ -19,83 +19,80 @@ public class Input {
     }
 
     public boolean yesNo(){
-        boolean isYes = false;
         String userInput = getString( "Respond with yes or no [yes/y/n/no]");
         return (userInput.equalsIgnoreCase("y") || userInput.equalsIgnoreCase("yes"));
     }
     public boolean yesNo(String prompt){
-        boolean isYes = false;
         String userInput = getString(prompt + "Respond with yes or no [yes/y/n/no]");
         return (userInput.equalsIgnoreCase("y") || userInput.equalsIgnoreCase("yes"));
     }
 
-    public int getInt(){
-        if(!scanner.hasNextInt()){
-            scanner.nextLine();
-            return getInt();
-        } else{
-            return scanner.nextInt();
+    public void getBinary(){
+        String input = getString("Enter a binary number: ");
+        try{
+            int output = Integer.parseInt(input, 2);
+            System.out.printf("Your number is %d%n", output);
+        } catch(NumberFormatException e){
+            getBinary();
         }
     }
-
-    public int getInt(int min, int max){
-        System.out.printf("Please enter an number between %d and %d%n", min, max);
-        int userInt = getInt();
-        if((userInt <= max ) && (userInt >= min )){
-            return userInt;
-        }else{
-            System.out.println("Invalid selection");
-            return getInt(min, max);
+    public void getHexadecimal(){
+        String input = getString("Enter a hexadecimal number: ");
+        try{
+            int output = Integer.parseInt(input, 16);
+            System.out.printf("Your number is %d%n", output);
+        } catch(NumberFormatException e){
+            getHexadecimal();
         }
-    }
-
-    public double getDouble(double min, double max){
-        double userDouble;
-
-        do{
-            //runs once assuming user inputs correctly
-            System.out.println("Enter a double between " + min + " and " + max);
-            userDouble = this.scanner.nextDouble();
-
-            if(this.scanner.hasNextDouble()){
-                if(userDouble <= max && userDouble >= min){
-                    System.out.println("In range");
-                    return userDouble;
-                }
-            }
-        }while(!this.scanner.hasNextDouble());//keeps running while user keeps inputting incorrect info
-
-        return 0;
-    }
-
-    public int getInt(String prompt){
-        int input;
-//        do{
-//            System.out.println(prompt);
-//            scanner.next();
-//            scanner.nextLine();
-//        }while(!scanner.hasNextInt());
-//        input = scanner.nextInt();
-//        return input;
-//        do{
-            System.out.println(prompt);
-//        }while(!scanner.hasNextInt());
-        if(!scanner.hasNextInt()){
-            scanner.next();
-            getInt(prompt);
-        }
-        input = scanner.nextInt();
-        return scanner.nextInt();
     }
 
     public static void main(String[] args) {
-        Input in = new Input(new Scanner(System.in));
-        int h = in.getInt("Enter two letters and a number");
+        Input input = new Input(new Scanner(System.in));
+        input.getBinary();
+        input.getHexadecimal();
     }
+
+    public int getInt(){
+        String input = scanner.next();
+        try{
+            Integer.valueOf(input);
+        } catch(NumberFormatException e){
+            return getInt("Please enter a valid integer: ");
+        }
+        return Integer.valueOf(input);
+    }
+
+    public int getInt(int min, int max){
+        int input = getInt(String.format("Please enter an integer between %d and %d%n", min, max));
+        return (input >= min && input <= max)? input: getInt(min, max);
+    }
+
+    public double getDouble(double min, double max){
+        double input = getDouble(String.format("Please enter a double between %.1f and %.1f%n", min, max));
+        return (input >= min && input <= max)? input: getDouble(min, max);
+
+    }
+
+    public int getInt(String prompt){
+        String input = scanner.next();
+        System.out.println(prompt);
+        try {
+            return Integer.valueOf(input);
+        } catch(NumberFormatException e){
+            System.out.println("Please enter a valid integer");
+            return getInt(prompt);
+        }
+    }
+
 
     public double getDouble(String prompt){
         System.out.println(prompt);
-        return scanner.nextDouble();
+        String input = scanner.next();
+        try{
+            return Double.valueOf(input);
+        } catch(NumberFormatException e){
+            return getDouble("Please enter a valid double: ");
+        }
     }
 
 }
