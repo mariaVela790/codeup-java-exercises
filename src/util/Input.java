@@ -15,16 +15,17 @@ public class Input {
 
     public String getString(String prompt){
         System.out.println(prompt);
-        return this.scanner.nextLine();
+        return getString();
     }
 
     public boolean yesNo(){
         String userInput = getString( "Respond with yes or no [yes/y/n/no]");
         return (userInput.equalsIgnoreCase("y") || userInput.equalsIgnoreCase("yes"));
     }
+
     public boolean yesNo(String prompt){
-        String userInput = getString(prompt + "Respond with yes or no [yes/y/n/no]");
-        return (userInput.equalsIgnoreCase("y") || userInput.equalsIgnoreCase("yes"));
+        System.out.println(prompt);
+        return yesNo();
     }
 
     public void getBinary(){
@@ -55,22 +56,12 @@ public class Input {
     public int getInt(){
         int input;
         try{
-            input = Integer.valueOf(scanner.nextLine());
+            input = Integer.valueOf(getString());
         } catch(NumberFormatException e){
             return getInt("Please enter a valid integer: ");
         }
         return input;
     }
-//
-//    public int getInt(){
-//        String input = scanner.next();
-//        try{
-//            Integer.valueOf(input);
-//        } catch(NumberFormatException e){
-//            return getInt("Please enter a valid integer: ");
-//        }
-//        return Integer.valueOf(input);
-//    }
 
     public int getInt(int min, int max){
         int input = getInt(String.format("Please enter an integer between %d and %d%n", min, max));
@@ -84,8 +75,7 @@ public class Input {
     }
 
     public int getInt(String prompt){
-        String input = scanner.next();
-        System.out.println(prompt);
+        String input = getString(prompt);
         try {
             return Integer.valueOf(input);
         } catch(NumberFormatException e){
@@ -95,8 +85,7 @@ public class Input {
 
 
     public double getDouble(String prompt){
-        System.out.println(prompt);
-        String input = scanner.next();
+        String input = getString(prompt);
         try{
             return Double.valueOf(input);
         } catch(NumberFormatException e){
