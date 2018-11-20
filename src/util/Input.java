@@ -53,14 +53,24 @@ public class Input {
     }
 
     public int getInt(){
-        String input = scanner.next();
+        int input;
         try{
-            Integer.valueOf(input);
+            input = Integer.valueOf(scanner.nextLine());
         } catch(NumberFormatException e){
             return getInt("Please enter a valid integer: ");
         }
-        return Integer.valueOf(input);
+        return input;
     }
+//
+//    public int getInt(){
+//        String input = scanner.next();
+//        try{
+//            Integer.valueOf(input);
+//        } catch(NumberFormatException e){
+//            return getInt("Please enter a valid integer: ");
+//        }
+//        return Integer.valueOf(input);
+//    }
 
     public int getInt(int min, int max){
         int input = getInt(String.format("Please enter an integer between %d and %d%n", min, max));
@@ -79,7 +89,6 @@ public class Input {
         try {
             return Integer.valueOf(input);
         } catch(NumberFormatException e){
-            System.out.println("Please enter a valid integer");
             return getInt(prompt);
         }
     }
